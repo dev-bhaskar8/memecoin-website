@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { useState } from 'react';
+import elonTweet from './assets/elon-tweet.png';
 
 function App() {
   const [tokenomics] = useState({
@@ -203,45 +204,70 @@ function App() {
           >
             Why Is Bill PreGnant? 
           </motion.h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="flex flex-col gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <motion.div
+                initial={{ opacity: 0, x: -50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                viewport={{ once: true }}
+                whileHover={{ 
+                  scale: 1.03,
+                  y: -3,
+                  transition: { duration: 0.2 }
+                }}
+                whileTap={{ scale: 0.98 }}
+                className="bg-dark p-6 rounded-lg border-2 border-primary"
+              >
+                <h3 className="text-2xl font-bold mb-4 text-white">The Miracle </h3>
+                <p className="text-lg text-white">
+                  Bill Gates didn't just get pregnant, he got MEGA PREGNANT! 
+                  Turns out eating too many Microsoft shares has side effects! 
+                  Now he's carrying the next big thing in crypto... literally!
+                </p>
+              </motion.div>
+              <motion.div
+                initial={{ opacity: 0, x: 50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.6, delay: 0.4 }}
+                viewport={{ once: true }}
+                whileHover={{ 
+                  scale: 1.03,
+                  y: -3,
+                  transition: { duration: 0.2 }
+                }}
+                whileTap={{ scale: 0.98 }}
+                className="bg-dark p-6 rounded-lg border-2 border-secondary"
+              >
+                <h3 className="text-2xl font-bold mb-4 text-white">The Journey </h3>
+                <p className="text-lg text-white">
+                  Every buy is a contraction! Join us as we help Bill through 
+                  the world's first crypto pregnancy! Warning: May cause sympathy cravings for gains!
+                </p>
+              </motion.div>
+            </div>
+            
             <motion.div
-              initial={{ opacity: 0, x: -50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.6 }}
               viewport={{ once: true }}
-              whileHover={{ 
-                scale: 1.03,
-                y: -3,
-                transition: { duration: 0.2 }
-              }}
-              whileTap={{ scale: 0.98 }}
-              className="bg-dark p-6 rounded-lg border-2 border-primary"
+              className="max-w-xl mx-auto w-full"
             >
-              <h3 className="text-2xl font-bold mb-4 text-white">The Miracle </h3>
-              <p className="text-lg text-white">
-                Bill Gates didn't just get pregnant, he got MEGA PREGNANT! 
-                Turns out eating too many Microsoft shares has side effects! 
-                Now he's carrying the next big thing in crypto... literally!
-              </p>
-            </motion.div>
-            <motion.div
-              initial={{ opacity: 0, x: 50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6, delay: 0.4 }}
-              viewport={{ once: true }}
-              whileHover={{ 
-                scale: 1.03,
-                y: -3,
-                transition: { duration: 0.2 }
-              }}
-              whileTap={{ scale: 0.98 }}
-              className="bg-dark p-6 rounded-lg border-2 border-secondary"
-            >
-              <h3 className="text-2xl font-bold mb-4 text-white">The Journey </h3>
-              <p className="text-lg text-white">
-                Every buy is a contraction! Join us as we help Bill through 
-                the world's first crypto pregnancy! Warning: May cause sympathy cravings for gains!
-              </p>
+              <motion.div
+                className="relative group rounded-lg overflow-hidden border-4 border-secondary/50 hover:border-secondary transition-colors duration-300"
+                whileHover={{ scale: 1.02 }}
+              >
+                <motion.img
+                  src={elonTweet}
+                  alt="Elon Musk Tweet about Pregnant Bill"
+                  className="w-full object-contain"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+                  <p className="text-white text-lg font-bold">"in case u need to lose a boner fast" 🤣</p>
+                  <p className="text-white/80 text-sm">- Elon</p>
+                </div>
+              </motion.div>
             </motion.div>
           </div>
         </section>
