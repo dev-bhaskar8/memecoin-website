@@ -194,11 +194,21 @@ function App() {
 
         {/* About Section */}
         <section className="py-12 sm:py-20">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-8 sm:mb-12 text-center gradient-text">
+          <motion.h2 
+            className="text-3xl sm:text-4xl md:text-5xl font-bold mb-8 sm:mb-12 text-center gradient-text"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+          >
             Why Is Bill PreGnant? 
-          </h2>
+          </motion.h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <motion.div
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              viewport={{ once: true }}
               whileHover={{ 
                 scale: 1.03,
                 y: -3,
@@ -215,6 +225,10 @@ function App() {
               </p>
             </motion.div>
             <motion.div
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+              viewport={{ once: true }}
               whileHover={{ 
                 scale: 1.03,
                 y: -3,
@@ -233,22 +247,40 @@ function App() {
         </section>
 
         {/* Tokenomics Section */}
-        <section className="py-20">
-          <h2 className="text-4xl md:text-5xl font-bold mb-12 text-center gradient-text">
+        <section className="py-12 sm:py-20">
+          <motion.h2 
+            className="text-3xl sm:text-4xl md:text-5xl font-bold mb-8 sm:mb-12 text-center gradient-text"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+          >
             PreGnanomics 
-          </h2>
+          </motion.h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-            {Object.entries(tokenomics).map(([key, value]) => (
+            {Object.entries(tokenomics).map(([key, value], index) => (
               <motion.div
                 key={key}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                viewport={{ once: true }}
                 whileHover={{ 
-                  scale: 1.02,
+                  scale: 1.05,
                   y: -3,
                   transition: { duration: 0.2 }
                 }}
                 className="text-center p-6 rounded-lg bg-dark border-2 border-primary"
               >
-                <h3 className="text-xl font-bold mb-2 capitalize text-white">{key}</h3>
+                <motion.h3 
+                  className="text-xl font-bold mb-2 capitalize text-white"
+                  animate={{ 
+                    scale: [1, 1.05, 1],
+                    transition: { duration: 2, repeat: Infinity }
+                  }}
+                >
+                  {key}
+                </motion.h3>
                 <p className="text-2xl gradient-text">{value}</p>
               </motion.div>
             ))}
@@ -256,17 +288,24 @@ function App() {
         </section>
 
         {/* Roadmap Section */}
-        <section className="py-20">
-          <h2 className="text-4xl md:text-5xl font-bold mb-12 text-center gradient-text">
+        <section className="py-12 sm:py-20">
+          <motion.h2 
+            className="text-3xl sm:text-4xl md:text-5xl font-bold mb-8 sm:mb-12 text-center gradient-text"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+          >
             Labor Pains to Massive Gains 
-          </h2>
+          </motion.h2>
           <div className="space-y-8">
             {roadmap.map((phase, index) => (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, x: -50 }}
+                initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
                 whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.5 }}
+                transition={{ duration: 0.6, delay: index * 0.2 }}
+                viewport={{ once: true }}
                 whileHover={{ 
                   scale: 1.02,
                   y: -3,
@@ -274,13 +313,28 @@ function App() {
                 }}
                 className="bg-dark p-6 rounded-lg border-2 border-secondary"
               >
-                <h3 className="text-2xl font-bold mb-4 text-white">{phase.phase}</h3>
+                <motion.h3 
+                  className="text-2xl font-bold mb-4 text-white"
+                  animate={{
+                    color: ['#ffffff', '#00ff00', '#ff69b4', '#ffffff'],
+                    transition: { duration: 3, repeat: Infinity }
+                  }}
+                >
+                  {phase.phase}
+                </motion.h3>
                 <ul className="space-y-2">
                   {phase.items.map((item, i) => (
-                    <li key={i} className="flex items-center text-lg text-white">
+                    <motion.li 
+                      key={i} 
+                      className="flex items-center text-lg text-white"
+                      initial={{ opacity: 0, x: -20 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      transition={{ duration: 0.3, delay: i * 0.1 + index * 0.2 }}
+                      viewport={{ once: true }}
+                    >
                       <span className="mr-2"></span>
                       {item}
-                    </li>
+                    </motion.li>
                   ))}
                 </ul>
               </motion.div>
