@@ -3,12 +3,20 @@ import { useState } from 'react';
 
 function App() {
   const [tokenomics] = useState({
-    totalSupply: '69,420,000,000,000',
-    burned: '42.0%',
-    liquidity: '31.9%',
-    marketing: '13.37%',
-    team: '12.69%'
+    totalSupply: '1,000,000,000',
+    dev: '5%',
+    marketing: '4%',
+    community: '91%'
   });
+
+  const [copied, setCopied] = useState(false);
+  const contractAddress = 'HEu9ydd4HNwhYfAgNhLv1KsQDeYBkJnBMNRrrBLRFiW1';
+
+  const handleCopy = () => {
+    navigator.clipboard.writeText(contractAddress);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  };
 
   const roadmap = [
     {
@@ -42,7 +50,7 @@ function App() {
 
   const memeQuotes = [
     "Bill Gates: 'Is it a bull run or just the baby kicking?' 🫃",
-    "Bill Gates’ due date got delayed—classic Windows update. ↻",
+    "Bill Gates' due date got delayed—classic Windows update. ↻",
     "Downloading Baby.exe... Progress: 69% 👶",
     "Bill's Belly > Bitcoin Market Cap 📈"
   ];
@@ -123,7 +131,7 @@ function App() {
             <div className="space-x-4">
               <motion.a
                 href="#"
-                className="bg-primary text-dark px-6 py-3 rounded-full font-bold hover:opacity-80 transition inline-block"
+                className="bg-primary text-dark px-6 py-3 rounded-full font-bold hover:opacity-80 transition inline-block relative group"
                 whileHover={{ 
                   scale: 1.05,
                   y: -2
@@ -132,10 +140,13 @@ function App() {
                 transition={{ duration: 0.2 }}
               >
                 Impregnate Your Wallet! 🫃
+                <span className="absolute -top-8 left-1/2 transform -translate-x-1/2 bg-dark text-white px-2 py-1 rounded text-sm opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
+                  pump.fun link
+                </span>
               </motion.a>
               <motion.a
                 href="#"
-                className="bg-secondary text-white px-6 py-3 rounded-full font-bold hover:opacity-80 transition inline-block"
+                className="bg-secondary text-white px-6 py-3 rounded-full font-bold hover:opacity-80 transition inline-block relative group"
                 whileHover={{ 
                   scale: 1.05,
                   y: -2
@@ -144,7 +155,17 @@ function App() {
                 transition={{ duration: 0.2 }}
               >
                 Join Baby Shower! 🎈
+                <span className="absolute -top-8 left-1/2 transform -translate-x-1/2 bg-dark text-white px-2 py-1 rounded text-sm opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
+                  Join Telegram
+                </span>
               </motion.a>
+            </div>
+            <div className="mt-8 bg-dark p-4 rounded-lg border-2 border-primary inline-flex items-center space-x-2 cursor-pointer group" onClick={handleCopy}>
+              <span className="text-white text-sm">CA: </span>
+              <span className="text-primary font-mono text-sm">{contractAddress}</span>
+              <span className="text-white text-sm ml-2">
+                {copied ? '✓ Copied!' : '(Click to Copy)'}
+              </span>
             </div>
           </motion.div>
         </section>

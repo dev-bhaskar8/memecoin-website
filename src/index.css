@@ -8,6 +8,39 @@
   color: white;
 }
 
+/* Prevent horizontal scrolling */
+html, body {
+  overflow-x: hidden;
+  width: 100%;
+}
+
+/* Custom Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 12px; /* vertical scrollbar width */
+}
+
+::-webkit-scrollbar-track {
+  background: #1a1a1a;
+  border: 2px solid #00ff00;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(45deg, #00ff00, #ff69b4);
+  border-radius: 10px;
+  border: 2px solid #1a1a1a;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(45deg, #ff69b4, #00ff00);
+}
+
+/* Firefox scrollbar styling */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #ff69b4 #1a1a1a;
+}
+
 .gradient-text {
   background: linear-gradient(45deg, #00ff00, #ff69b4);
   -webkit-background-clip: text;

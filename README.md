@@ -13,11 +13,10 @@ A humorous and interactive web application built with React, TypeScript, and Vit
 
 ## 📊 Tokenomics
 
-- Total Supply: 69,420,000,000,000
-- Burned: 42.0%
-- Liquidity: 31.9%
-- Marketing: 13.37%
-- Team: 12.69%
+- Total Supply: 1,000,000,000
+- Dev: 5%
+- Marketing: 4%
+- Community: 91%
 
 ## 🗺️ Roadmap
 
