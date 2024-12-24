@@ -22,7 +22,7 @@ A humorous and interactive web application built with React, TypeScript, and Vit
 
 ### Phase 1: First Trimester
 - Launch $PREGBILL
-- First 1,000 HODLers get virtual ultrasound NFTs
+- First 1,000 HODLers get their names on Bills Baby Registry 👶
 - Start craving pickles & Microsoft shares
 - Release "Is Bill Pregnant or Just Rich?" quiz game
 
@@ -35,7 +35,7 @@ A humorous and interactive web application built with React, TypeScript, and Vit
 ### Phase 3: DELIVERY TIME!
 - Major exchange listings
 - Open "Pregnant Billionaire Support Group" DAO
-- Release "Pregnant Bill Gates" mobile game
+- Launch "Windows 95 Weeks Pregnant" period tracker app 📱
 - Give birth to Web4.0
 
 ## 🛠️ Tech Stack

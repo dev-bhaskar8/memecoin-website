@@ -23,7 +23,7 @@ function App() {
       phase: 'Phase 1: First Trimester ',
       items: [
         'Launch $PREGBILL (Morning sickness hits ATH!)',
-        'First 1,000 HODLers get virtual ultrasound NFTs',
+        'First 1,000 HODLers get their names on Bills Baby Registry 👶',
         'Start craving pickles & Microsoft shares',
         'Release "Is Bill Pregnant or Just Rich?" quiz game'
       ]
@@ -42,7 +42,7 @@ function App() {
       items: [
         'Major exchange listings (Push harder than Windows updates!)',
         'Open "Pregnant Billionaire Support Group" DAO',
-        'Release "Pregnant Bill Gates" mobile game',
+        'Launch "Windows 95 Weeks Pregnant" period tracker app 📱',
         'Give birth to Web4.0 (Its twins!)'
       ]
     }
