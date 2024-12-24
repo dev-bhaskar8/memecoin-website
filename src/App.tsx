@@ -111,7 +111,7 @@ function App() {
               </motion.p>
             </div>
             <motion.img
-              src="/bill-gates-pregnant.jpg"
+              src="./bill-gates-pregnant.jpg"
               alt="Pregnant Bill Gates"
               className="pregnant-bill w-64 h-64 mx-auto rounded-full mb-8"
               whileHover={{ 
@@ -156,7 +156,7 @@ function App() {
               >
                 Join Baby Shower! 🎈
                 <span className="absolute -top-8 left-1/2 transform -translate-x-1/2 bg-dark text-white px-2 py-1 rounded text-sm opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
-                  Join Telegram
+                  telegram.me/pregbill
                 </span>
               </motion.a>
             </div>
