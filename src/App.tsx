@@ -67,7 +67,7 @@ function App() {
             className="w-full"
           >
             <motion.h1 
-              className="text-6xl md:text-8xl font-bold meme-shadow mb-4 text-white"
+              className="text-4xl sm:text-6xl md:text-8xl font-bold meme-shadow mb-4 text-white"
               animate={{ 
                 scale: [1, 1.03, 1],
                 y: [0, -2, 0]
@@ -80,9 +80,9 @@ function App() {
             >
               $PREGBILL
             </motion.h1>
-            <div className="flex flex-col items-center justify-center space-y-2 mb-8">
+            <div className="flex flex-col items-center justify-center space-y-2 mb-6 px-4">
               <motion.p 
-                className="text-2xl md:text-3xl text-white"
+                className="text-xl sm:text-2xl md:text-3xl text-white"
                 animate={{ 
                   y: [0, -4, 0],
                   scale: [1, 1.02, 1]
@@ -96,7 +96,7 @@ function App() {
                 The World's First Pregnant Billionaire! 🫃
               </motion.p>
               <motion.p 
-                className="text-xl text-primary"
+                className="text-lg sm:text-xl text-primary"
                 animate={{ 
                   scale: [1, 1.05, 1], 
                   rotate: [0, 2, 0, -2, 0]
@@ -113,7 +113,7 @@ function App() {
             <motion.img
               src="./bill-gates-pregnant.jpg"
               alt="Pregnant Bill Gates"
-              className="pregnant-bill w-64 h-64 mx-auto rounded-full mb-8"
+              className="pregnant-bill w-48 sm:w-56 md:w-64 h-48 sm:h-56 md:h-64 mx-auto rounded-full mb-6 sm:mb-8"
               whileHover={{ 
                 scale: 1.1, 
                 rotate: 360,
@@ -128,10 +128,10 @@ function App() {
                 }
               }}
             />
-            <div className="space-x-4">
+            <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-4">
               <motion.a
                 href="#"
-                className="bg-primary text-dark px-6 py-3 rounded-full font-bold hover:opacity-80 transition inline-block relative group"
+                className="w-full sm:w-auto bg-primary text-dark px-4 sm:px-6 py-3 rounded-full font-bold hover:opacity-80 transition inline-block relative group text-sm sm:text-base"
                 whileHover={{ 
                   scale: 1.05,
                   y: -2
@@ -140,13 +140,13 @@ function App() {
                 transition={{ duration: 0.2 }}
               >
                 Impregnate Your Wallet! 🫃
-                <span className="absolute -top-8 left-1/2 transform -translate-x-1/2 bg-dark text-white px-2 py-1 rounded text-sm opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
+                <span className="absolute -top-8 left-1/2 transform -translate-x-1/2 bg-dark text-white px-2 py-1 rounded text-xs sm:text-sm opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
                   pump.fun link
                 </span>
               </motion.a>
               <motion.a
                 href="#"
-                className="bg-secondary text-white px-6 py-3 rounded-full font-bold hover:opacity-80 transition inline-block relative group"
+                className="w-full sm:w-auto bg-secondary text-white px-4 sm:px-6 py-3 rounded-full font-bold hover:opacity-80 transition inline-block relative group text-sm sm:text-base"
                 whileHover={{ 
                   scale: 1.05,
                   y: -2
@@ -155,23 +155,26 @@ function App() {
                 transition={{ duration: 0.2 }}
               >
                 Join Baby Shower! 🎈
-                <span className="absolute -top-8 left-1/2 transform -translate-x-1/2 bg-dark text-white px-2 py-1 rounded text-sm opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
+                <span className="absolute -top-8 left-1/2 transform -translate-x-1/2 bg-dark text-white px-2 py-1 rounded text-xs sm:text-sm opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
                   telegram.me/pregbill
                 </span>
               </motion.a>
             </div>
-            <div className="mt-8 bg-dark p-4 rounded-lg border-2 border-primary inline-flex items-center space-x-2 cursor-pointer group" onClick={handleCopy}>
-              <span className="text-white text-sm">CA: </span>
-              <span className="text-primary font-mono text-sm">{contractAddress}</span>
-              <span className="text-white text-sm ml-2">
+            <div className="mt-6 sm:mt-8 bg-dark p-3 sm:p-4 rounded-lg border-2 border-primary inline-flex items-center space-x-2 cursor-pointer group text-xs sm:text-sm" onClick={handleCopy}>
+              <span className="text-white">CA: </span>
+              <span className="text-primary font-mono break-all sm:break-normal">{contractAddress}</span>
+              <span className="text-white ml-2 hidden sm:inline">
                 {copied ? '✓ Copied!' : '(Click to Copy)'}
+              </span>
+              <span className="text-white ml-2 inline sm:hidden">
+                {copied ? '✓' : 'Copy'}
               </span>
             </div>
           </motion.div>
         </section>
 
         {/* Meme Quotes Section */}
-        <section className="py-20">
+        <section className="py-12 sm:py-20">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {memeQuotes.map((quote, index) => (
               <motion.div
@@ -181,17 +184,17 @@ function App() {
                   y: -3,
                   transition: { duration: 0.2 }
                 }}
-                className="bg-dark p-4 rounded-lg border-2 border-primary text-center"
+                className="bg-dark p-3 sm:p-4 rounded-lg border-2 border-primary text-center"
               >
-                <p className="text-xl text-white font-bold">{quote}</p>
+                <p className="text-base sm:text-xl text-white font-bold">{quote}</p>
               </motion.div>
             ))}
           </div>
         </section>
 
         {/* About Section */}
-        <section className="py-20">
-          <h2 className="text-4xl md:text-5xl font-bold mb-12 text-center gradient-text">
+        <section className="py-12 sm:py-20">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-8 sm:mb-12 text-center gradient-text">
             Why Is Bill PreGnant? 
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
